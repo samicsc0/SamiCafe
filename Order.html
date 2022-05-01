@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sami Cafe & Restaurant</title>
+    <link rel="stylesheet" href="./style/style.css" />
+  <link
+    href="./style/fontawesome-free-6.0.0-beta3-web/css/all.css"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <header class="order_page">
+      <h1>Order <span class="scnd">Your</span> Favorite</h1>
+      <!-- Script for validation & calculating total price-->
+      <script>
+          function valid(){
+              if(document.getElementById("pn").value.length > 10 && document.getElementById("pn").value.length < 10){
+              alert("Invalid Phone number")
+            }
+            if(document.getElementById("fd").value == "top"){
+              alert("You must select one food from the list.")
+            }
+          }
+          function calc(){
+              let doro = 120;
+              let ketfo = 300;
+              let tibs = 270;
+              let bur = 300;
+              let pizza = 300;
+              let shwa = 100;
+              if(document.getElementById("fd").value == "doro"){
+                  document.getElementById("tt").value =  (document.getElementById("it").value * doro)
+              }
+              if(document.getElementById("fd").value == "kitfo"){
+                document.getElementById("tt").value =  (document.getElementById("it").value * ketfo)
+                }
+                if(document.getElementById("fd").value == "tibs"){
+                    document.getElementById("tt").value =  (document.getElementById("it").value * tibs)
+                }
+                if(document.getElementById("fd").value == "humb"){
+                    document.getElementById("tt").value =  (document.getElementById("it").value * bur)
+                }
+                if(document.getElementById("fd").value == "pizza"){
+                    document.getElementById("tt").value =  (document.getElementById("it").value * pizza)
+                }
+                if(document.getElementById("fd").value == "shawa"){
+                    document.getElementById("tt").value =  (document.getElementById("it").value * shwa)
+                }
+                
+          }
+      </script>
+  </header>  
+
+  <div class="ord-form">
+    <form action="#">
+      <input name="name" type="text" placeholder="Name" required class="inp"/>
+      <input name="email" type="email" placeholder="E-Mail" required class="inp"/>
+      <input name="ph_no" type="text" placeholder="Phone Number" required class="inp" id="pn"/>
+      <input name="Address" type="text" placeholder="Address" required class="inp"/>
+      <select name="food" id="fd" class="inp">
+          <option value="top">Select Your Food</option>
+          <option value="doro">ዶሮ ወጥ</option>
+          <option value="kitfo">ክትፎ</option>
+          <option value="tibs">ጥብስ</option>
+          <option value="humb">Hamburger</option>
+          <option value="pizza">Pizza</option>
+          <option value="shawa">Shawarma</option>     
+      </select>
+      <input name="itm_num" type="number" placeholder="Number of Item" required class="inp" id="it"min="0"/>
+      
+      <input name="totpr" type="number" placeholder="Total Price" required class="inp" readonly id="tt"/>
+      <input type="button" value="Calculate Price" class="inp cal" onclick="calc()">
+      <input type="submit" value="SEND" class="inp sen" onclick="valid()" >
+    </form>
+  </div>
+
+  <footer class="footer">
+    <div class="col col-1">
+      <h4 class="h4b4">On Social Medias</h4>
+      <ul>
+        <li>
+          <a href="http://www.facebook.com" target="_blank"
+            ><i class="fab fa-facebook-f"></i>&nbsp;facebook</a
+          >
+        </li>
+        <li>
+          <a href="http://www.twitter.com" target="_blank"
+            ><i class="fab fa-twitter"></i>&nbsp;twitter</a
+          >
+        </li>
+        <li>
+          <a href="http://www.instagram.com" target="_blank"
+            ><i class="fab fa-instagram"></i>&nbsp; instagram</a
+          >
+        </li>
+        <li>
+          <a href="http://www.youtube.com" target="_blank"
+            ><i class="fab fa-youtube"></i>&nbsp;youtube</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <div class="col col-2">
+      <ul>
+        <h4>Navigation</h4>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./index.html#ab">About</a></li>
+        <li><a href="./index.html#or">Order</a></li>
+        <li><a href="./index.html#gal">Gallary</a></li>
+        <li><a href="./index.html#tes">Testimonials</a></li>
+        <li><a href="./index.html#cont">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="col col-3">
+      <h4>Address</h4>
+      <ul>
+        <li><i class="fa fa-phone"></i> &nbsp;+251 913456543</li>
+        <li><i class="fa fa-envelope-open"></i> &nbsp;samicafe@gmail.com</li>
+        <li><i class="fa fa-globe"></i> &nbsp;www.samicafe.com</li>
+        <li><i class="fa fa-map-marker"></i> &nbsp;A.A, Ethiopia</li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>
