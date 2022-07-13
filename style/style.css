@@ -4,6 +4,9 @@
   border: 0;
   box-sizing: border-box;
 }
+html{
+ scroll-behavior: smooth;
+}
 body {
   background-color: #f5e9db;
   overflow-x: hidden;
@@ -32,6 +35,7 @@ nav {
   font-family: serif;
   font-weight: 500;
 }
+
 .secndtxt {
   color: #e6e5de;
 }
@@ -246,7 +250,7 @@ nav a:hover {
   float: left;
 }
 .tescon .box img {
-  text-align: center;
+  
   border-radius: 50%;
   height: 200px;
   margin: 10px;
